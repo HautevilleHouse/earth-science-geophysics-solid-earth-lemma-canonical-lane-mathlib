@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean.SeismicWavePropagation
+import EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean.MantleConvection
+import EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean.EarthMagneticField
+import EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean.PlateTectonics
+
+namespace HautevilleHouse
+namespace EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean
+
+def ConstrainedSolidEarthClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_solid_earth_endgame (A : AdmissibleClass) :
+    ConstrainedSolidEarthClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end EarthScienceGeophysicsSolidEarthLemmaCanonicalLaneLean
+end HautevilleHouse
